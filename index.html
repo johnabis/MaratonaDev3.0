@@ -3,8 +3,8 @@
 
 <head>
   <title>Doe vida! Doe sangue!</title>
-  <link type="image/png" rel="shortcut icon" href="logo.png" />
-  <link rel="stylesheet" href="index.css">
+  <link type="image/png" rel="shortcut icon" href="/logo.png" />
+  <link rel="stylesheet" href="/index.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
   
   <section class="form hide">
     <h2>Entre na lista de doadores</h2>
-    <form action="/">
+    <form action="/" method="POST">
       <input
         type="text"
         name="name"
@@ -51,31 +51,21 @@
     <h2>Últimos <span>doadores</span></h2>
     
     <section class="donors">
-      <div class="donor">
-        <div class="blood">AB+</div>
-        <p>Diego Fernandes</p>
-      </div>
+
+      {% for donor in donors %}
 
       <div class="donor">
-        <div class="blood">B+</div>
-        <p>Cleiton Souza</p>
+        <div class="blood">{{donor.blood}}</div>
+        <p>{{donor.name}}</p>
       </div>
 
-      <div class="donor">
-        <div class="blood">A+</div>
-        <p>Robson Marques</p>
-      </div>
-
-      <div class="donor">
-        <div class="blood">O+</div>
-        <p>Mayk Brito</p>
-      </div>
+      {% endfor %}
 
     </section>
   </main>
   <footer>Com ❤ Rocketseat</footer>
 
-  <script src="scripts.js"></script>
+  <script src="/scripts.js"></script>
 </body>
 
 </html>
